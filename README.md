@@ -1,23 +1,16 @@
 # Procesamiento Paralelo de Transacciones SFTP
 
-## Requisitos
-- Compilador GCC compatible con C++17.
-- Librerías: `libcurl` y soporte para `OpenMP`.
-- Entorno: Ubuntu 24.04 LTS.
+Este proyecto es una solución de alto rendimiento en C++ que utiliza **OpenMP** y **libcurl** para procesar archivos CSV descargados desde un servidor SFTP y consultar masivamente una API REST[cite: 2]. Su objetivo es calcular el promedio de compras realizadas por clientes segmentados por género (Femenino y Masculino) en un entorno de ejecución altamente concurrente[cite: 2].
 
-## Compilación
-Para compilar ambos programas (secuencial y paralelo), ejecuta en la terminal:
-make
+## Requisitos del Sistema
+* **Entorno de Evaluación:** Ubuntu 24.04 LTS[cite: 2].
+* **Compilador:** GCC (Gnu C Compiler suit) compatible con C++17[cite: 2, 5].
+* **Librerías:** `libcurl4-openssl-dev`, `nlohmann-json3-dev` y soporte nativo para `OpenMP`[cite: 5, 6].
 
-## Ejecución
-Es obligatorio pasar las credenciales de la API como variables de entorno al ejecutar.
+## Compilación (Ubuntu 24.04 LTS)
 
-**Versión Paralela:**
-OMP_NUM_THREADS=$(nproc) API_EMAIL="tu_correo@utem.cl" API_RUT="tu_rut" ./tarea_paralela
+Para compilar el proyecto utilizando el archivo `Makefile` provisto, abre una terminal en la raíz del proyecto y ejecuta[cite: 5]:
 
-**Versión Secuencial:**
-API_EMAIL="tu_correo@utem.cl" API_RUT="tu_rut" ./tarea_secuencial
-
-## Limpieza
-Para borrar los ejecutables y archivos de log generados:
+```bash
 make clean
+make
