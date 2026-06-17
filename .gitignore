@@ -1,1 +1,15 @@
+# Archivos ejecutables y compilados de C/C++
+tarea_paralela
+tester
+*.o
+*.out
+
+# Credenciales y configuraciones locales
+.env
+
+# Directorios de datos masivos
 data/
+*.csv
+
+# Archivos ocultos del sistema operativo
+.DS_Store
